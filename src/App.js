@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Input from "./components/Input";
 import Button from "./components/Button";
+import Redbutton from "./components/Redbutton";
+import Bluebutton from "./components/Bluebutton";
+import "./tailwind.css";
 
 function App() {
   const [input, setInput] = useState("");
@@ -14,7 +17,6 @@ function App() {
         messages={messages}
         sendMessages={(newMessages) => setMessages(newMessages)}
       />
-      <div>{JSON.stringify(messages)}</div>
       <div>
         {messages.map((message) => {
           return (
@@ -24,6 +26,10 @@ function App() {
           );
         })}
       </div>
+      <br />
+      <Bluebutton />
+      <br />
+      <Redbutton />
     </div>
   );
 }
