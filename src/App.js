@@ -8,6 +8,7 @@ import "./tailwind.css";
 function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [isInverted, setIsInverted] = useState(false);
   return (
     <div>
       <Input message={input} onTyped={(text) => setInput(text)} />
@@ -27,9 +28,15 @@ function App() {
         })}
       </div>
       <br />
-      <Bluebutton />
+      <Bluebutton
+        blueColor={isInverted}
+        setBlueColor={(newColor) => setIsInverted(!newColor)}
+      />
       <br />
-      <Redbutton />
+      <Redbutton
+        redColor={isInverted}
+        setRedColor={(newColor) => setIsInverted(!newColor)}
+      />
     </div>
   );
 }
